@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © BotPenguin. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_order_place_after">
+        <observer name="botpenguin_connector_order_placed"
+                  instance="BotPenguin\Connector\Observer\OrderPlaced"/>
+    </event>
+    <event name="sales_order_save_after">
+        <observer name="botpenguin_connector_order_saved"
+                  instance="BotPenguin\Connector\Observer\OrderSavedAfter"/>
+    </event>
+    <event name="customer_register_success">
+        <observer name="botpenguin_connector_customer_registered"
+                  instance="BotPenguin\Connector\Observer\CustomerRegistered"/>
+    </event>
+    <event name="customer_address_save_after">
+        <observer name="botpenguin_connector_customer_address_saved"
+                  instance="BotPenguin\Connector\Observer\CustomerAddressSaved"/>
+    </event>
+</config>
